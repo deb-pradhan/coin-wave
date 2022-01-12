@@ -19,13 +19,14 @@ export default function Home(props) {
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          A simple table with Crypto Market data:
         </p>
 
         <div className="grid">
         <table className="table">
         <thead>
           <tr>
+            <th>Coin</th>
             <th>Symbol</th>
             <th>24H Change</th>
             <th>Price</th>
@@ -34,7 +35,8 @@ export default function Home(props) {
         </thead>
         <tbody>
           {data.map(coin => (
-            <tr key={coin.id}>
+            <tr key={coin.id.toUpperCase()}>
+              <td>{coin.id.toUpperCase()}</td>
               <td>
                 <img 
                   src={coin.image} 
